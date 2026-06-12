@@ -5,11 +5,148 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HP Virtual Saya</title>
     <style>
-        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; background-color: #000; }
-        iframe { width: 100%; height: 100%; border: none; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 50px 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            animation: slideUp 0.6s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            color: #333;
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .emoji {
+            font-size: 60px;
+            margin: 20px 0;
+        }
+
+        p {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .btn-container {
+            display: flex;
+            gap: 15px;
+            flex-direction: column;
+        }
+
+        a, button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        a:hover, button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(102, 126, 234, 0.6);
+        }
+
+        a:active, button:active {
+            transform: translateY(0);
+        }
+
+        .secondary-btn {
+            background: #f0f0f0;
+            color: #667eea;
+        }
+
+        .secondary-btn:hover {
+            background: #e0e0e0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .info {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #999;
+            font-size: 13px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 40px 25px;
+                margin: 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .emoji {
+                font-size: 50px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+
+            a, button {
+                padding: 12px 25px;
+                font-size: 15px;
+            }
+        }
     </style>
 </head>
 <body>
-    <iframe src="https://appetize.io/embed/demo?device=nexus5&scale=100&orientation=portrait&osVersion=8.1"></iframe>
+    <div class="container">
+        <div class="emoji">📱</div>
+        <h1>HP Virtual Device</h1>
+        <p>Jalankan emulator Android Nexus 5 dan uji aplikasi Anda secara langsung</p>
+        
+        <div class="btn-container">
+            <a href="https://appetize.io/embed/demo?device=nexus5&scale=100&orientation=portrait&osVersion=8.1" target="_blank">
+                🚀 Buka Emulator
+            </a>
+        </div>
+
+        <div class="info">
+            <p>💡 Emulator akan dibuka di tab baru. Pastikan popup diizinkan di browser Anda.</p>
+        </div>
+    </div>
 </body>
 </html>
